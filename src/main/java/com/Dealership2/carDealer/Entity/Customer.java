@@ -1,61 +1,42 @@
 package com.Dealership2.carDealer.Entity;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-
 import java.util.UUID;
 
-@EntityScan
 public class Customer {
 
-
-    private int customerId;
+    private UUID customerId;
     private String firstName;
     private String lastName;
     private String email;
     private String phoneNumber;
-    private Payment payment;
-    private Car car;
-
 
 
     public Customer() {
 
     }
 
-    public Customer(int customerId, String firstName, String lastName, String email, String phoneNumber, Payment payment, Car car) {
-        this.customerId = customerId;
+    public Customer(UUID customerId, String firstName, String lastName, String email, String phoneNumber) {
+        this.customerId = UUID.randomUUID();
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phoneNumber = phoneNumber;
-        this.payment = payment;
-        this.car = car;
+
     }
 
-        public int getCustomerId() {
-            return customerId;
-        }
-
-        public void setCustomerId(int customerId) {
-            this.customerId = customerId;
-        }
-
-        public void setCar(Car car) {
-            this.car = car;
-        }
-
-
-    public Car getCar() {
-        return car;
+    public UUID getCustomerId() {
+        return customerId;
     }
-    public void setCar() {
-        this.car = car;
+
+    public void setCustomerId(UUID customerId) {
+        this.customerId = customerId;
     }
 
 
     public String getFirstName() {
         return firstName;
     }
+
     public void setFirstName(String firstName) {
 
         this.firstName = firstName;
@@ -89,16 +70,6 @@ public class Customer {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-
-    public Payment getPayment() {
-        return payment;
-    }
-    
-    public void setPayment(Payment payment) {
-        this.payment = this.payment;
-    }
-
-
 
 }
 

@@ -47,11 +47,9 @@
                 <td>${car.model}</td>
                 <td>${car.year}</td>
                 <td>${car.formatPrice(price)}</td>
-                <a href="/selected-car?vin=${car.vin}">
                     <td>
-                        <button type="selected-car" class="btn btn-outline-secondary">Purchase</button>
+                        <button type="purchase" class="btn btn-outline-secondary"><a href="/purchase?vin=${car.vin}">Purchase</a></button>
                     </td>
-                </a>
             </tr>
         </c:forEach>
         </tbody>

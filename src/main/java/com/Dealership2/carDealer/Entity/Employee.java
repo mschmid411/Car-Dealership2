@@ -2,7 +2,6 @@ package com.Dealership2.carDealer.Entity;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
-@EntityScan
 public class Employee {
     private String eeID;
     private String password;

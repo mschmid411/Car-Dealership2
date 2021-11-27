@@ -1,10 +1,10 @@
 package com.Dealership2.carDealer.Service;
 
+import com.Dealership2.carDealer.Database.MockDatabaseCars;
 import com.Dealership2.carDealer.Entity.Car;
-import com.Dealership2.carDealer.Database.MockDatabase;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.converter.json.GsonBuilderUtils;
 import org.springframework.stereotype.Service;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -12,23 +12,22 @@ import java.util.ArrayList;
 public class CarDirectoryService {
 
 
-    @Autowired
-    private MockDatabase mockDatabase;
+    private final MockDatabaseCars mockDatabase;
 
 
-    // constructor for car inventory
-    public CarDirectoryService() {
-
+    // constructor inventory service class
+    public CarDirectoryService(MockDatabaseCars mockDatabase) {
+            this.mockDatabase = mockDatabase;
     }
 
     public ArrayList<Car> getAllCars() {
         return mockDatabase.getAllCars();
 
     }
-//    public void addCar(Car car) {
-//        mockDatabase.saveCars(car);
-//
-//    }
+    public void addCar(Car car) {
+        mockDatabase.saveCars(car);
+
+    }
 
     public ArrayList<Car> getPreOwned() {
         ArrayList<Car> preOwnedList = new ArrayList<>();
@@ -93,10 +92,6 @@ public class CarDirectoryService {
 //        for(Car temp : )
     }
 }
-
-
-
-
 
 
 

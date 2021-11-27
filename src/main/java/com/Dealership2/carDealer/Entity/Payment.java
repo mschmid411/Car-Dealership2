@@ -2,29 +2,32 @@ package com.Dealership2.carDealer.Entity;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
-import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.UUID;
 
 
-
-@EntityScan
 public class Payment {
-    private int transactionID;
+    private UUID transactionID;
+    private Customer customer;
+    private String ccName;
     private String ccNumber;
     private String cardType;
     private String ccExpiration;
     private String ccCvv;
-    private Date transactionDate;
+    private LocalDate transactionDate; //LocalDate.parse("yyyy-MM-dd");
 
 
 
     public Payment() {
-       // this.transactionID = UUID.randomUUID();
+        this.transactionID = UUID.randomUUID();
 
     }
 
-    public Payment(int transactionID, String ccNumber, String cardType, String ccExpiration, String ccCvv, Date transactionDate) {
-        this.transactionID = transactionID;
+    public Payment(UUID transactionID, Customer customer, String ccName, String ccNumber, String cardType, String ccExpiration, String ccCvv, LocalDate transactionDate) {
+        this.transactionID = UUID.randomUUID();
+        this.customer = customer;
+        this.ccName = ccName;
         this.ccNumber = ccNumber;
         this.cardType = cardType;
         this.ccExpiration = ccExpiration;
@@ -33,13 +36,6 @@ public class Payment {
 //        this.car = car;
 //        this.transactionDate = transactionDate;
     }
-
-    public Payment(int i, String s, String amex, String s1, int i1) {
-    }
-
-    public Payment(int transactionID, String ccNumber, String amex, String ccExpiration, String ccCvv, int i) {
-    }
-
 
 //
 //    public Car getCar() {
@@ -51,11 +47,11 @@ public class Payment {
 //    }
 
 
-    public int getTransactionID() {
+    public UUID getTransactionID() {
         return transactionID;
     }
 
-    public void setTransactionID(int transactionID) {
+    public void setTransactionID(UUID transactionID) {
         this.transactionID = transactionID;
     }
 
@@ -91,15 +87,27 @@ public class Payment {
         this.ccCvv = ccCvv;
     }
 
-    public Date getTransactionDate() {
+    public LocalDate getTransactionDate() {
         return transactionDate;
     }
 
-    public void setTransactionDate(Date transactionDate) {
+    public void setTransactionDate(LocalDate transactionDate) {
         this.transactionDate = transactionDate;
     }
 
+    public String getCcName() {
+        return ccName;
+    }
 
+    public void setCcName(String ccName) {
+        this.ccName = ccName;
+    }
 
+    public Customer getCustomer() {
+        return customer;
+    }
 
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
 }

@@ -7,20 +7,20 @@ import java.util.ArrayList;
 
 
 @Component
-public class MockDatabase {
+public class MockDatabaseCars {
 
     // variables comprising db
     private ArrayList<Car> allCars = new ArrayList<Car>();
-//    private ArrayList<Customer> allCustomers = new ArrayList<Customer>();
 
 
-// constructor db
-    public MockDatabase() {
-        generateMockCars();
-//        generateMockCustomers();
+
+    // constructor db
+    public MockDatabaseCars() {
+        generateMockCars(); //method returns db below
+
 
     }
-
+    // getter and setter for allCars
     public ArrayList<Car> getAllCars() {
         return this.allCars;
     }
@@ -28,16 +28,6 @@ public class MockDatabase {
     public void setAllCars(ArrayList<Car> allCars) {
         this.allCars = allCars;
     }
-
-
-// getters&setters for db
-//    public ArrayList<Customer> getAllCustomers() {
-//        return allCustomers;
-//    }
-//
-//    public void setAllCustomers(ArrayList<Customer> allCustomers) {
-//        this.allCustomers = allCustomers;
-//    }
 
 
         public void generateMockCars() {
@@ -203,24 +193,13 @@ public class MockDatabase {
             allCars.add(car10);
         }
 
-//        public void generateMockCustomers () {
-//            Payment p1;
-//            p1 = new Payment(1, "312034710297", "AMEX", "01/25","787",(2021-10-11));
-//            Customer customer1 = new Customer(1, "Billy", "Joel", "pianoMan@email.com", "867-5309", p1, allCars.get(0));
-//            addCustomer(customer1);
-//
-//        }
-//
-//    public void addCustomer(Customer customer) {
-//        allCustomers.add(customer);
-//    }
 
     public void addCar(Car car) {
         allCars.add(car);
 
     }
-//    public void saveCars(Car car) {
-//        allCars.add(car);
-//    }
+    public void saveCars(Car car) {
+        allCars.add(car);
+    }
 
 }
