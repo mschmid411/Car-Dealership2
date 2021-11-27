@@ -115,7 +115,7 @@ public class DealerController {
             // redirect back
 
         // render the jsp
-        return "MAKE fsdfsdfME.jsp";
+        return "MAKE fsdfsfdfdfdfME.jsp";
     }
 
     @GetMapping("/purchase")
