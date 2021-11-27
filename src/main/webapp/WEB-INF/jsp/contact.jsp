@@ -5,17 +5,17 @@
 
 <html>
 <head>
-  <head>
-    <meta charset="utf-8">
-    <link href="/css/lux.css" rel="stylesheet">
+    <head>
+        <meta charset="utf-8">
+        <link href="/css/lux.css" rel="stylesheet">
 
-  </head>
-  <title>Contact Us</title>
+    </head>
+    <title>Contact Us</title>
 
 
-  <header>
-    <%@ include file="navbar.jsp"%>
-  </header>
+    <header>
+        <%@ include file="navbar.jsp" %>
+    </header>
 
 </head>
 <body>
@@ -26,42 +26,46 @@
 
 <div class="container">
 
-  <h3  class="text-center">Contact us</h3><br />
+    <h3 class="text-center">Contact us</h3><br/>
 
-  <div class="row">
-    <div class="col-md-8">
-      <form action="/post" method="post">
-        <input class="form-control" name="name" placeholder="Name..." /><br />
-        <input class="form-control" name="phone" placeholder="Phone..." /><br />
-        <input class="form-control" name="email" placeholder="E-mail..." /><br />
-        <textarea class="form-control" name="text" placeholder="How can we help you?" style="height:150px;"></textarea><br />
-        <input class="btn btn-primary" type="submit" value="Send" /><br /><br />
-      </form>
+    <div class="row">
+        <div class="col-md-8">
+
+            <input class="form-control" name="name" placeholder="Name..."/><br/>
+            <input class="form-control" name="phone" placeholder="Phone..."/><br/>
+            <input class="form-control" name="email" placeholder="E-mail..."/><br/>
+            <textarea class="form-control" name="text" placeholder="How can we help you?"
+                      style="height:150px;"></textarea><br/>
+            <a href="/thank-you">
+                <div class="pt-1 mb-4">
+                    <button type="button" style="width: 15rem;" align="center" class="btn btn-primary disabled" >Send</button>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <b>Customer service:</b> <br/>
+            Phone: +1 800 209 291<br/>
+            E-mail: <a href="mailto:support@mysite.com">support@luxcars.com</a><br/>
+            <br/><br/>
+            <b>Headquarter:</b><br/>
+            Lux Cars Inc, <br/>
+            Chicago street Rush<br/>
+            60661 IL, USA<br/>
+            Phone: +1 312 000 101<br/>
+            <a href="mailto:luxcars@mysite.com">info@luxcars.com</a><br/>
+
+
+            <br/><br/>
+            <b>Berlin:</b><br/>
+            LL Berlin Litd, <br/>
+            25/F.168 Queen<br/>
+            Dusseldorn District, Germany<br/>
+            Phone: +852 129 209 291<br/>
+            <a href="">hk@mysite.com</a><br/>
+
+
+        </div>
     </div>
-    <div class="col-md-4">
-      <b>Customer service:</b> <br />
-      Phone: +1 129 209 291<br />
-      E-mail: <a href="mailto:support@mysite.com">support@mysite.com</a><br />
-      <br /><br />
-      <b>Headquarter:</b><br />
-      Company Inc, <br />
-      Las vegas street 201<br />
-      55001 Nevada, USA<br />
-      Phone: +1 145 000 101<br />
-      <a href="mailto:usa@mysite.com">usa@mysite.com</a><br />
-
-
-      <br /><br />
-      <b>Hong kong:</b><br />
-      Company HK Litd, <br />
-      25/F.168 Queen<br />
-      Wan Chai District, Hong Kong<br />
-      Phone: +852 129 209 291<br />
-      <a href="mailto:hk@mysite.com">hk@mysite.com</a><br />
-
-
-    </div>
-  </div>
 
 </div>
 

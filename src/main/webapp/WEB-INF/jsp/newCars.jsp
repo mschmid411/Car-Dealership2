@@ -34,13 +34,16 @@
         <tbody>
         <c:forEach items="${newCars}" var="car">
             <tr class="table-active">
-                <td> <img src="${car.imageurl}" width="350" height="200"></td>
+                <td><img src="${car.imageurl}" width="350" height="200"></td>
                 <td>${car.printPreOwned()}</td>
                 <td>${car.make}</td>
                 <td>${car.model}</td>
                 <td>${car.year}</td>
                 <td>${car.formatPrice(price)}</td>
-                <td><button type="button" class="btn btn-outline-secondary" href="/purchase" >Purchase</button></td>
+                <td>
+                    <button type="purchase" class="btn btn-outline-secondary"><a href="/purchase?vin=${car.vin}">Purchase</a>
+                    </button>
+                </td>
             </tr>
         </c:forEach>
         </tbody>

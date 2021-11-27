@@ -43,9 +43,10 @@
                 <td>${car.year}</td>
                 <td>${car.currentOdometer}</td>
                 <td>${car.formatPrice(price)}</td>
-                <form:form method="post" action="/preOwned" modelAttribute="car">
-                    <td><button type="purchase" class="btn btn-outline-secondary">Purchase</button></td>
-                </form:form>
+                <td>
+                    <button type="purchase" class="btn btn-outline-secondary"><a href="/purchase?vin=${car.vin}">Purchase</a>
+                    </button>
+                </td>
             </tr>
         </c:forEach>
         </tbody>

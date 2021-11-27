@@ -44,6 +44,7 @@ public class MockDatabaseCars {
             car1.setYear(2024);
             car1.setPrice(800000);
             car1.setPreOwned(false);
+            car1.setSold(false);
             allCars.add(car1);
 
 
@@ -61,6 +62,7 @@ public class MockDatabaseCars {
             car2.setYear(2013);
             car2.setPrice(233509);
             car2.setPreOwned(true);
+            car2.setSold(false);
             allCars.add(car2);
 
             Car car3 = new Car();
@@ -77,6 +79,7 @@ public class MockDatabaseCars {
             car3.setYear(2008);
             car3.setPrice(89841);
             car3.setPreOwned(true);
+            car3.setSold(false);
             allCars.add(car3);
 
             Car car4 = new Car();
@@ -93,6 +96,7 @@ public class MockDatabaseCars {
             car4.setYear(2021);
             car4.setPrice(9000000);
             car4.setPreOwned(true);
+            car4.setSold(false);
             allCars.add(car4);
 
             Car car5 = new Car();
@@ -109,6 +113,7 @@ public class MockDatabaseCars {
             car5.setYear(2021);
             car5.setPrice(74390);
             car5.setPreOwned(true);
+            car5.setSold(false);
             allCars.add(car5);
 
 
@@ -125,6 +130,7 @@ public class MockDatabaseCars {
             car6.setYear(2022);
             car6.setPrice(28_000_000);
             car6.setPreOwned(false);
+            car6.setSold(false);
             allCars.add(car6);
 
 
@@ -141,6 +147,7 @@ public class MockDatabaseCars {
             car7.setYear(2008);
             car7.setPrice(318_300);
             car7.setPreOwned(true);
+            car7.setSold(false);
             allCars.add(car7);
 
 
@@ -158,6 +165,7 @@ public class MockDatabaseCars {
             car8.setYear(2022);
             car8.setPrice(302400);
             car8.setPreOwned(false);
+            car8.setSold(true);
             allCars.add(car8);
 
             Car car9 = new Car();
@@ -174,6 +182,7 @@ public class MockDatabaseCars {
             car9.setYear(2009);
             car9.setPrice(430200);
             car9.setPreOwned(true);
+            car9.setSold(false);
             allCars.add(car9);
 
             Car car10 = new Car();
@@ -190,6 +199,7 @@ public class MockDatabaseCars {
             car10.setYear(2022);
             car10.setPrice(69000);
             car10.setPreOwned(false);
+            car10.setSold(false);
             allCars.add(car10);
         }
 

@@ -21,17 +21,17 @@
 <body>
 <form:form method="post" action="/purchase" modelAttribute="transaction">
     <form:input type="hidden" path="car.vin" value="${car.vin}" />
-
+    <form:input type="hidden" path="price" value="${price}" />
     <div class="container">
         <div class="py-5 text-center">
             <h2>Purchase Form</h2>
-            <p class="lead">If you've selected a special offer vehicle, please enter your bid in the cart.</p>
+            <p class="lead">If you've selected a special offer vehicle, Congratulations! You're offer has been accepted.</p>
         </div>
 
         <div class="row">
             <div class="col-md-4 order-md-2 mb-4">
                 <h4 class="d-flex justify-content-between align-items-center mb-3">
-                    <span class="text-muted">Your cart</span>
+                    <span class="text-muted">Your Purchase</span>
                     <span class="badge badge-secondary badge-pill">3</span>
                 </h4>
                 <ul class="list-group mb-3">
@@ -42,38 +42,37 @@
                         <span class="text-muted"></span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between lh-condensed">
-                        ${transaction.car.make}
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between lh-condensed">
-                    </li>
-                    <div>
-                        <h6 class="my-0">Third item</h6>
-                        <p>
-                        </p>
-                        <small class="text-muted">Brief description</small>
-                    </div>
-                    <span class="text-muted">$5</span>
-                    </li>
+                            ${transaction.car.year}, ${transaction.car.make}, ${transaction.car.model}
+<%--                    </li>--%>
+<%--&lt;%&ndash;                     <div>&ndash;%&gt;--%>
+<%--&lt;%&ndash;                        <small class="text-muted">Purchase Price</small>&ndash;%&gt;--%>
+<%--&lt;%&ndash;                    </div>&ndash;%&gt;--%>
+<%--                    <span class="text-muted"></span>--%>
+<%--                    </li>--%>
                     <li class="list-group-item d-flex justify-content-between bg-light">
                         <div class="text-success">
-                            <h6 class="my-0">Special Offer Bid</h6>
-                            <small>Offer Accepted</small>
+                            <h6 class="my-0">Amount Due</h6>
+<%--                            <small>Offer Accepted</small>--%>
                         </div>
-                        <span class="text-success">up to 10%</span>
+<%--                        <span class="text-success">up to 10%</span>--%>
                     </li>
                     <li class="list-group-item d-flex justify-content-between">
-                        <span>Total (USD)</span>
-                        <strong>$New Total</strong>
+                        <span>Total USD</span>
+                        <strong>${transaction.car.formatPrice(price)}</strong>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>Amount Bid</span>
+                        <strong>${transaction.bid.formatPrice(offer)}</strong>
                     </li>
                 </ul>
 
 
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Make Offer">
-                    <div class="input-group-append">
-                        <button type="submit" class="btn btn-secondary">Submit</button>
-                    </div>
-                </div>
+<%--                <div class="input-group">--%>
+<%--                    <input type="text" class="form-control" placeholder="Make Offer">--%>
+<%--                    <div class="input-group-append">--%>
+<%--                        <button type="submit" class="btn btn-secondary">Submit</button>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
             </div>
             <div class="col-md-8 order-md-1">
                 <h4 class="mb-3">Billing Information</h4>

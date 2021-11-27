@@ -61,16 +61,15 @@
                             <input type="password" id="form2Example28" class="form-control form-control-lg"/>
                             <label class="form-label" for="form2Example28">Password</label>
                         </div>
-
+                        <a href="/salesdash">
                         <div class="pt-1 mb-4">
-                            <button type="button" style="width: 15rem;" align="center" class="btn btn-primary disabled">Login</button>
+                            <button type="button" style="width: 15rem;" align="center" class="btn btn-primary disabled" >Login</button>
                         </div>
-
+                        </a>
                         <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>
-                        <%--                        <p>Don't have an account? <a href="#!" class="link-info">Register here</a></p>--%>
+                        <p>Don't have an account? <a href="#!" class="link-info">Register here</a></p>
 
                     </form>
-
                 </div>
 
             </div>

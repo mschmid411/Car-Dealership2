@@ -18,8 +18,6 @@ import java.util.UUID;
 public class MockDatabaseTransactions {
 
     private ArrayList<Transaction> allTransactions = new ArrayList<>();
-
-
     private final CarDirectoryService carDirectoryService;
     private final CustomerService customerService;
 
@@ -38,7 +36,7 @@ public class MockDatabaseTransactions {
     public MockDatabaseTransactions(CarDirectoryService carDirectoryService, CustomerService customerService){
         this.carDirectoryService = carDirectoryService;
         this.customerService = customerService;
-    generateMockTransactions();
+        generateMockTransactions();
 
     }
 
@@ -48,13 +46,13 @@ public class MockDatabaseTransactions {
         Payment newPayment = new Payment();
 
         newPayment.setCustomer(firstCustomer);
-        newPayment.setCcName("BIlly SOmething");
+        newPayment.setCcName("Billy Joel");
         newPayment.setCcNumber("312321312");
         newPayment.setCardType("debit");
 
         Transaction t1 = new Transaction(UUID.randomUUID(), customerService.getFirstCustomer(),
                 carDirectoryService.findByVin(8), LocalDate.parse("2020-09-01", DateTimeFormatter.ISO_LOCAL_DATE), newPayment);
-        allTransactions.add(t1);
+                allTransactions.add(t1);
 
     }
 

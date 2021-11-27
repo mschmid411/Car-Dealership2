@@ -1,43 +1,61 @@
 package DTO;
 
+
+import com.Dealership2.carDealer.Entity.Car;
+
+import java.lang.constant.Constable;
+import java.text.NumberFormat;
+
 public class Bid {
 
-    private String vin;
-    private double bid;
+    private int vin;
+    private double offer;
 
 
-    public Bid(String vin, double bid) {
-        this.vin = vin;
-        this.bid = bid;
-
+    public Bid() {
 
     }
 
-    public void getMaxDiscount(double price) {
-        if (bid <= (price - (price * .1))) {
-            System.out.println("Offer Accepted, Congratulations! \n Your new total is, " + (price - bid));
-        } else {
-            System.out.println("Unfortunately, this price cannot be accommodated, please contact a sales expert for further negotiation.");
-
-        }
-
-    }
-
-    public String getVin() {
+    public int getVin() {
         return vin;
     }
 
-    public void setVin(String vin) {
+    public void setVin(int vin) {
         this.vin = vin;
     }
 
-    public double getBid() {
-        return bid;
+    public double getOffer() {
+        return offer;
     }
 
-    public void setBid(double bid) {
-        this.bid = bid;
+    public void setOffer(double offer) {
+        this.offer = offer;
     }
 
 
-}
+    public Bid(int vin, double offer) {
+        this.vin = vin;
+        this.offer = offer;
+    }
+
+    public double maxDiscountPrice(double offer, Car promoCar) {
+        double maxDiscount = promoCar.getPrice() - (promoCar.getPrice() * .1);
+        if (offer >= maxDiscount) {
+            return offer;
+        } else {
+            return 0;
+        }
+    }
+
+    public String formatPrice(double offer) {
+        NumberFormat formatPrice = NumberFormat.getCurrencyInstance();
+        return (formatPrice.format(this.offer));
+
+    }
+
+    }
+
+
+
+
+

@@ -5,46 +5,37 @@
 <%-- This is JSP comment --%>
 <html>
 <head>
-    <head>
-        <meta charset="utf-8">
-        <link href="/css/lux.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <link href="/css/lux.css" rel="stylesheet">
 
-    </head>
-    <title>Car Details</title>
+</head>
+<title>Car Details</title>
 
-<body>
 <header>
     <%@ include file="navbar.jsp" %>
 </header>
 <body>
+<section class="py-5 text-center container">
 
+    <div class="card mb-3">
+        <h3 class="card-header">${carList.make} ${carList.model}</h3>
+        <div class="card-body">
+            <h5 class="card-title">${carList.year} </h5>
+            <h6 class="card-subtitle text-muted"> ${carList.printPreOwned()}</h6>
+        </div>
 
-    <section class="py-5 text-center container">
-<%--    <div class="row py-lg-5">--%>
-<%--        <div class="col-lg-6 col-md-8 mx-auto">--%>
+        <div class="card-body">
+            <p class="card-text"> Model ${carList.model} | Year ${carList.year} | Mileage ${carList.currentOdometer} |
+                Color ${carList.color} | Trim-Level ${carList.trimLevel} | Body-Style ${carList.bodyStyle} | Total
+                Price: ${carList.formatPrice(price)}</p>
 
-            <h1 class="fw-light">${carList.year} ${carList.model}</h1>
+            <div class="card-body">
+                <a href="/allCars" class="card-link">Back to Inventory</a>
+                <a href="/purchase" path="/purchase" class="card-link">Purchase</a>
+            </div>
             <img src="${carList.imageurl}" class="img-fluid" alt="Responsive image">
-
-            <p class="lead text-muted">Make: ${carList.make}</p>
-            <p class="lead text-muted">Model: ${carList.model}</p>
-            <p class="lead text-muted">Year: ${carList.year}</p>
-            <p class="lead text-muted">Mileage: ${carList.currentOdometer}</p>
-            <p class="lead text-muted">Color: ${carList.color}</p>
-            <p class="lead text-muted">Trim-Level: ${carList.trimLevel}</p>
-            <p class="lead text-muted">New/Pre-Owned: ${carList.printPreOwned()}</p>
-            <p class="lead text-muted">Body-Style:${carList.bodyStyle}</p>
-            <p class="lead text-muted">Total Price: ${carList.formatPrice(price)}</p>
-<%--    <img src="${carList.imageurl}" alt="Image Not Found" width="100%" height="225"/>--%>
-
-
-<%--        </div>--%>
-<%--    </div>--%>
-    </section>
-
-
-</body>
-</header>
-
+        </div>
+    </div>
+</section>
 </body>
 </html>

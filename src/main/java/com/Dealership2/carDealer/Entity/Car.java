@@ -21,11 +21,12 @@ public class Car {
     private String trimLevel; // Extras
     private LocalDate dateAcquired; //= LocalDate.parse(""); // Date car was bought by MotoMerchants
     private long currentOdometer; // How many miles are on a used car
-    private float price;// Base price of the vehicle, this needs to change if dateAcquired is over 60 days
+    private double price;// Base price of the vehicle, this needs to change if dateAcquired is over 60 days
     private boolean preOwned;
+    private boolean isSold;
     private String imageurl;
 
-    public Car(int vin, String make, String model, String color, int year, String bodyStyle, String trimLevel, LocalDate dateAcquired, long currentOdometer, float price, boolean preOwned, String imageurl) {
+    public Car(int vin, boolean isSold, String make, String model, String color, int year, String bodyStyle, String trimLevel, LocalDate dateAcquired, long currentOdometer, double price, boolean preOwned, String imageurl) {
         this.vin = vin;
         this.make = make;
         this.model = model;
@@ -38,6 +39,7 @@ public class Car {
         this.price = price;
         this.preOwned = preOwned;
         this.imageurl = imageurl;
+        this.isSold = isSold;
     }
 
 
@@ -47,8 +49,19 @@ public class Car {
 
     }
 
+    public boolean isPreOwned() {
+        return preOwned;
+    }
+
+    public boolean isSold() {
+      return isSold;
+
+    }
 
 
+    public void setSold(boolean sold) {
+        isSold = sold;
+    }
 
     public int getVin() {
         return vin;
@@ -135,11 +148,11 @@ public class Car {
         this.currentOdometer = currentOdometer;
     }
 
-    public float getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(double price) {
         this.price = price;
 
     }
@@ -152,7 +165,7 @@ public class Car {
         this.imageurl = imageurl;
     }
 
-    public String formatPrice(float price) {
+    public String formatPrice(double price) {
         NumberFormat formatPrice = NumberFormat.getCurrencyInstance();
         return (formatPrice.format(this.price));
 
@@ -169,55 +182,13 @@ public class Car {
     }
 
 
-    @Override
-    public String toString() {
-        return
-                ("Make: " + make + "\nModel: " + model +
-                "\nColor: " + color +
-                "\nYear: " + year +
-                "\nBody-Style: " + bodyStyle +
-                "\n Trim-Level: " + trimLevel +
-                "\nMileage: " + currentOdometer +
-                "\nPrice: " + price +
-                " " + preOwned);
 
     }
 
-        public void printCar() {
-
-            if (preOwned) {
-                System.out.print(//"vin:" + vin +
-                        "Make: " + make + "\nModel: " + model +
-                                "\nColor: " + color +
-                                "\nYear: " + year +
-                                "\nBody-Style: " + bodyStyle +
-                                "\n Trim-Level: " + trimLevel +
-                                "\nMileage: " + currentOdometer +
-                                "\nPrice: " + price +
-                                "\nCertified Pre-Owned*");
-            } else {
-
-                System.out.print(//"vin:" + vin +
-                        ", make:'" + make + '\'' +
-                                ", model:'" + model + '\'' +
-                                ", color:'" + color + '\'' +
-                                ", year:" + year +
-                                ", bodyStyle:'" + bodyStyle + '\'' +
-                                ", trimLevel:'" + trimLevel + '\'' +
-                                ", currentOdometer:" + currentOdometer +
-                                ", price:" + price);
-            }
-        }
-    }
 
 
-//    public boolean getPromoCar(){
-//        if(getDateAcquired().compareTo(LocalDate.now()) > (120));
-//        return true;
-//    }
-//    public void setPromoCar(boolean promoCar) {
-//        this.promoCar = promoCar;
-//    }
+
+
 
 
 
